@@ -59,7 +59,7 @@ public class DeviceList extends AppCompatActivity {
 
     private void pairedDevicesList() {
         pairedDevices = myBluetooth.getBondedDevices();
-        ArrayList list = new ArrayList();
+        ArrayList<String> list = new ArrayList<String>();
 
         if (pairedDevices.size()>0)
         {
@@ -73,7 +73,7 @@ public class DeviceList extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "No Paired Bluetooth Devices Found.", Toast.LENGTH_LONG).show();
         }
 
-        final ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1, list);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, list);
         devicelist.setAdapter(adapter);
         devicelist.setOnItemClickListener(myListClickListener); //Method called when the device from the list is clicked
 
@@ -91,7 +91,7 @@ public class DeviceList extends AppCompatActivity {
             Intent i = new Intent(DeviceList.this, TankControl.class);
 
             //Change the activity.
-            i.putExtra(EXTRA_ADDRESS, address); //this will be received at ledControl (class) Activity
+            i.putExtra(EXTRA_ADDRESS, address); //this will be received at TankControl (class) Activity
             startActivity(i);
         }
     };
