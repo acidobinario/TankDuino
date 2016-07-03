@@ -1,2 +1,3 @@
 # TankDuino
-tanque controlado con bluetooth y arduino
+Tanque Controlado por bluetooth y android
+by AcidoBinario with <3
